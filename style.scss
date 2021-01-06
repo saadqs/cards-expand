@@ -1,0 +1,61 @@
+// Importing SASS Partials
+@import "global";
+@import "pics";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+// Flexbox parent
+.container {
+  display: flex;
+  width: 90vw;
+  margin: auto;
+}
+
+// Flexbox children
+.card {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  height: 80vh;
+  border-radius: 5rem;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 1rem;
+  position: relative;
+  transition: flex 0.6s ease-in;
+
+  h3 {
+    font-size: 2rem;
+    position: absolute;
+    left: 3rem;
+    top: 2rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in 0.5s;
+  }
+}
+
+.card.active {
+  flex: 5;
+
+  h3 {
+    opacity: 1;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem;
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+// Media Queries
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+  }
+  .card:nth-of-type(4),
+  .card:nth-of-type(5) {
+    display: none;
+  }
+}
